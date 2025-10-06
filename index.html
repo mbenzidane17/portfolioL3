@@ -30,52 +30,90 @@
 
     <!-- Rubrique 1 -->
     <section id="travaux" class="card">
-      <h2>Rubrique 1 : Travaux demandés</h2>
-      <p><strong>Compétence visée :</strong> Gérer et organiser ses productions académiques.</p>
-      <p><strong>Critères de réussite :</strong> Tous les travaux demandés sont déposés, complets et correctement nommés.</p>
+      <button class="accordion">Rubrique 1 : Travaux demandés</button>
+      <div class="panel">
+        <p><strong>Compétence visée :</strong> Gérer et organiser ses productions académiques.</p>
+        <p><strong>Critères de réussite :</strong> Tous les travaux demandés sont déposés, complets et correctement nommés.</p>
+        <ul class="file-list">
+          <li><a href="#">Travail 1.pdf</a> <span class="commentaire">Dossier complet</span></li>
+          <li><a href="#">Travail 2.docx</a> <span class="commentaire">Projet en groupe</span></li>
+        </ul>
+      </div>
     </section>
 
     <!-- Rubrique 2 -->
     <section id="notes" class="card">
-      <h2>Rubrique 2 : Notes de cours</h2>
-      <p><strong>Compétence visée :</strong> Développer une autonomie dans la prise de notes et la gestion des ressources personnelles.</p>
-      <p><strong>Critères de réussite :</strong> Les notes de cours sont claires, structurées et accessibles.</p>
+      <button class="accordion">Rubrique 2 : Notes de cours</button>
+      <div class="panel">
+        <p><strong>Compétence visée :</strong> Développer une autonomie dans la prise de notes et la gestion des ressources personnelles.</p>
+        <p><strong>Critères de réussite :</strong> Les notes de cours sont claires, structurées et accessibles.</p>
+        <ul class="file-list">
+          <li><a href="#">Chapitre 1.pdf</a> <span class="commentaire">Introduction</span></li>
+          <li><a href="#">Chapitre 2.pdf</a> <span class="commentaire">Résumé détaillé</span></li>
+        </ul>
+      </div>
     </section>
 
     <!-- Rubrique 3 -->
     <section id="documents" class="card">
-      <h2>Rubrique 3 : Documents SI</h2>
-      <p><strong>Compétence visée :</strong> Identifier, rédiger et organiser des documents liés à un système d’information.</p>
-      <p><strong>Critères de réussite :</strong> Les documents sont rédigés, classés et bien présentés.</p>
+      <button class="accordion">Rubrique 3 : Documents SI</button>
+      <div class="panel">
+        <p><strong>Compétence visée :</strong> Identifier, rédiger et organiser des documents liés à un système d’information.</p>
+        <p><strong>Critères de réussite :</strong> Les documents sont rédigés, classés et bien présentés.</p>
+      </div>
     </section>
 
     <!-- Rubrique 4 -->
     <section id="certifications" class="card">
-      <h2>Rubrique 4 : Certifications</h2>
-      <p><strong>Compétence visée :</strong> Valoriser quelques compétences par des attestations ou certifications obtenues.</p>
-      <p><strong>Critères de réussite :</strong> Les certificats sont déposés en format lisible (PDF ou image) et correctement identifiés.</p>
+      <button class="accordion">Rubrique 4 : Certifications</button>
+      <div class="panel">
+        <p><strong>Compétence visée :</strong> Valoriser quelques compétences par des attestations ou certifications obtenues.</p>
+        <p><strong>Critères de réussite :</strong> Les certificats sont déposés en format lisible (PDF ou image) et correctement identifiés.</p>
+      </div>
     </section>
 
     <!-- Rubrique 5 -->
     <section id="projet" class="card">
-      <h2>Rubrique 5 : Projet final</h2>
-      <p><strong>Compétence visée :</strong> Concevoir et réaliser un projet numérique intégrant les compétences acquises.</p>
-      <p><strong>Critères de réussite :</strong> Le projet est réalisé, documenté et présenté de manière professionnelle.</p>
+      <button class="accordion">Rubrique 5 : Projet final</button>
+      <div class="panel">
+        <p><strong>Compétence visée :</strong> Concevoir et réaliser un projet numérique intégrant les compétences acquises.</p>
+        <p><strong>Critères de réussite :</strong> Le projet est réalisé, documenté et présenté de manière professionnelle.</p>
+      </div>
     </section>
 
     <!-- Rubrique 6 -->
     <section id="diaporama" class="card">
-      <h2>Rubrique 6 : Diaporama</h2>
-      <p><strong>Compétence visée :</strong> Synthétiser et présenter un projet de manière claire et professionnelle.</p>
-      <p><strong>Critères de réussite :</strong> Le diaporama est structuré, visuellement lisible et adapté à une présentation orale.</p>
+      <button class="accordion">Rubrique 6 : Diaporama</button>
+      <div class="panel">
+        <p><strong>Compétence visée :</strong> Synthétiser et présenter un projet de manière claire et professionnelle.</p>
+        <p><strong>Critères de réussite :</strong> Le diaporama est structuré, visuellement lisible et adapté à une présentation orale.</p>
+      </div>
     </section>
 
     <!-- Rubrique 7 -->
     <section id="ressources" class="card">
-      <h2>Rubrique 7 : Autres ressources</h2>
-      <p><strong>Compétence visée :</strong> Développer une capacité de veille et d’enrichissement personnel par des ressources complémentaires.</p>
-      <p><strong>Critères de réussite :</strong> Les ressources ajoutées sont pertinentes, variées et correctement référencées.</p>
+      <button class="accordion">Rubrique 7 : Autres ressources</button>
+      <div class="panel">
+        <p><strong>Compétence visée :</strong> Développer une capacité de veille et d’enrichissement personnel par des ressources complémentaires.</p>
+        <p><strong>Critères de réussite :</strong> Les ressources ajoutées sont pertinentes, variées et correctement référencées.</p>
+      </div>
     </section>
   </main>
+
+  <!-- Script accordéon -->
+  <script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(button => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        let panel = button.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
